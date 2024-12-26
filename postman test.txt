@@ -1,0 +1,54 @@
+http://localhost:3000/api/author
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "1234567890"
+}
+
+PUT http://localhost:5000/authors/{id}
+{
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phoneNumber": "9876543210"
+}
+
+DELETE http://localhost:5000/authors/{id}
+
+GET http://localhost:5000/authors/overbooked
+
+[
+    {
+        "_id": "60c72b2f5f1b2c001c8e4f12",
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "phoneNumber": "987-654-3210",
+        "books": [
+            { "_id": "60c72b2f5f1b2c001c8e4f13", "title": "Book 1", "author": "60c72b2f5f1b2c001c8e4f12" },
+        ]
+    }
+]
+
+POST /books/
+{
+    "title": "The Great Gatsby",
+    "author": "author_id_here",  // Replace with actual author ID
+    "isbn": "978-0743273565",
+    "availableCopies": 10
+}
+
+ GET /books/
+
+GET /books/:id
+GET http://localhost:3000/books/60c72b2f5f1b2c001c8d9e6f
+ PUT /books/:id
+{
+    "title": "The Great Gatsby - Updated",
+    "author": "author_id_here",  // Replace with actual author ID
+    "isbn": "978-0743273565",
+    "availableCopies": 8,
+    "borrowCount": 5
+}
+
+ DELETE /books/:id
+DELETE http://localhost:3000/books/60c72b2f5f1b2c001c8d9e6f
